@@ -21,7 +21,7 @@
         <strong>Namespace</strong>
       </div>
       <div class="span4">
-        WebExtras.MVC.Bootstrap.Core
+        WebExtras.Mvc.Core
       </div>
     </div>
   </div>
@@ -31,7 +31,7 @@
   <h4>Hyperlinks</h4>
   <p>Markup</p>
   <pre><code>
-@@Html.Hyperlink("Take me to google", "http://www.google.com")
+  @@Html.Hyperlink("Take me to google", "http://www.google.com")
   </code></pre>
   <p>Output</p>
   <div class="content">
@@ -39,8 +39,8 @@
   </div>
   <p>All available extensions</p>
   <pre><code>
-@@Html.Hyperlink(linkText, url, htmlAttributes)
-@@Html.Hyperlink(linkText, actionresult, htmlAttributes)    
+  @@Html.Hyperlink(linkText, url, htmlAttributes)
+  @@Html.Hyperlink(linkText, actionresult, htmlAttributes)    
   </code></pre>
 </div>
 
@@ -48,7 +48,7 @@
   <h4>Images</h4>
   <p>Markup</p>
   <pre><code>
-@@Html.Image("/Content/png/youtube-logo.png", "YouTube", "Take me to YouTube")
+  @@Html.Image("/Content/png/youtube-logo.png", "YouTube", "Take me to YouTube")
   </code></pre>
   <p>Output</p>
   <div class="content">
@@ -56,9 +56,9 @@
   </div>
   <p>All available extensions</p>
   <pre><code>
-@@Html.Image(src, htmlAttributes)
-@@Html.Image(src, altText, htmlAttributes)
-@@Html.Image(src, altText, title, htmlAttributes)
+  @@Html.Image(src, htmlAttributes)
+  @@Html.Image(src, altText, htmlAttributes)
+  @@Html.Image(src, altText, title, htmlAttributes)
   </code></pre>
   <h4>Styled images</h4>
   <div class="content">
@@ -86,7 +86,7 @@
   <p>An image link is basically an image embedded into a hyperlink</p>
   <p>Markup</p>
   <pre><code>
-@@Html.Imagelink("/Content/png/youtube-logo.png", "YouTube", "Take me to YouTube", "http://www.youtube.com")
+  @@Html.Imagelink("/Content/png/youtube-logo.png", "YouTube", "Take me to YouTube", "http://www.youtube.com")
   </code></pre>
   <p>Output</p>
   <div class="content">
@@ -94,12 +94,12 @@
   </div>
   <p>All available extensions</p>
   <pre><code>
-@@Html.Imagelink(src, url, htmlAttributes)
-@@Html.Imagelink(src, altText, url, htmlAttributes)
-@@Html.Imagelink(src, altText, title, url, htmlAttributes)
-@@Html.Imagelink(src, actionresult, htmlAttributes)
-@@Html.Imagelink(src, altText, actionresult, htmlAttributes)
-@@Html.Imagelink(src, altText, title, actionresult, htmlAttributes)
+  @@Html.Imagelink(src, url, htmlAttributes)
+  @@Html.Imagelink(src, altText, url, htmlAttributes)
+  @@Html.Imagelink(src, altText, title, url, htmlAttributes)
+  @@Html.Imagelink(src, actionresult, htmlAttributes)
+  @@Html.Imagelink(src, altText, actionresult, htmlAttributes)
+  @@Html.Imagelink(src, altText, title, actionresult, htmlAttributes)
   </code></pre>
   <p>Notes</p>
   <div class="content">
@@ -107,9 +107,9 @@
     to add HTML attributes to the IMG tag you must specify the <strong>htmlAttributes</strong> parameter in the following format:    
   </div>
   <pre><code>
-<span class="comment">// Any attributes specified with property name 'a' will be applied to the link</span>
-<span class="comment">// and those specified with property name 'img' will be applied to the image</span>
-new { a = new { attr1 = value1 ... }, img = new { attr1 = value1 } }
+  <span class="comment">// Any attributes specified with property name 'a' will be applied to the link</span>
+  <span class="comment">// and those specified with property name 'img' will be applied to the image</span>
+  new { a = new { attr1 = value1 ... }, img = new { attr1 = value1 } }
   </code></pre>
 </div>
 
@@ -117,13 +117,13 @@ new { a = new { attr1 = value1 ... }, img = new { attr1 = value1 } }
   <h4>Lists</h4>
   <p>Markup</p>
   <pre><code>
-@@Html.List(EList.Unordered, new HtmlListItem[] {        <span class="comment">// You can create an ordered list by changing the list type</span>
-  new HtmlListItem("list item 1"),
-  new HtmlListItem("list item 2"),
-  new HtmlListItem("list item 3"),
-  new HtmlListItem("list item 4"),
-  new HtmlListItem("list item 5")
-})
+  @@Html.List(EList.Unordered, new HtmlListItem[] {        <span class="comment">// You can create an ordered list by changing the list type</span>
+    new HtmlListItem("list item 1"),
+    new HtmlListItem("list item 2"),
+    new HtmlListItem("list item 3"),
+    new HtmlListItem("list item 4"),
+    new HtmlListItem("list item 5")
+  })
   </code></pre>
   <p>Output</p>
   <div class="content">
@@ -145,8 +145,8 @@ new { a = new { attr1 = value1 ... }, img = new { attr1 = value1 } }
   </p>
   <p>Usage</p>
   <pre><code>
-@@Html.AuthHyperlink(...)         <span class="comment">// Provides all the same overloads as the @@Html.Hyperlink(...) extension</span>
-@@Html.AuthImagelink(...)         <span class="comment">// Provides all the same overloads as the @@Html.Imagelink(...) extension</span>
+  @@Html.AuthHyperlink(...)         <span class="comment">// Provides all the same overloads as the @@Html.Hyperlink(...) extension</span>
+  @@Html.AuthImagelink(...)         <span class="comment">// Provides all the same overloads as the @@Html.Imagelink(...) extension</span>
   </code></pre>
 </div>
 
@@ -157,8 +157,8 @@ new { a = new { attr1 = value1 ... }, img = new { attr1 = value1 } }
   </p>
   <p>Usage</p>
   <pre><code>
-@@Html.IsValidFor(f => f.PropertyName)
-@@Html.IsValidFor(PropertyName)
+  @@Html.IsValidFor(f => f.PropertyName)
+  @@Html.IsValidFor(PropertyName)
   </code></pre>
 </div>
 
@@ -167,29 +167,29 @@ new { a = new { attr1 = value1 ... }, img = new { attr1 = value1 } }
   <p>These methods allow you to get the rendered content of a view in the controller. It is particularly useful if you want to return a view as a JSON callback.</p>
   <p>Usage/Markup</p>
   <pre><code>
-<span class="comment">// The following controller action demonstrates how you would use these extension methods</span>
-using WebExtras.MVC.Bootstrap.Core
+  <span class="comment">// The following controller action demonstrates how you would use these extension methods</span>
+  using WebExtras.Mvc.Core
 
-public class HomeController : ControllerBase
-{
-  public JsonResult GetJsonView()
+  public class HomeController : ControllerBase
   {
-    string content = string.Empty;
-    SomeViewModel myModel = new SomeViewModel();
-    if(Request.IsAjaxRequest)
-      content = <span class="hightlight">this.</span>GetRenderedPartialView("mypartialviewname", myModel);
-    else
-      content = <span class="hightlight">this.</span>GetRenderedView("myfullviewname", "mymasterpagename", myModel);
+    public JsonResult GetJsonView()
+    {
+      string content = string.Empty;
+      SomeViewModel myModel = new SomeViewModel();
+      if(Request.IsAjaxRequest)
+        content = <span class="hightlight">this.</span>GetRenderedPartialView("mypartialviewname", myModel);
+      else
+        content = <span class="hightlight">this.</span>GetRenderedView("myfullviewname", "mymasterpagename", myModel);
 
-    return Json(content, JsonRequestBehavior.AllowGet);
+      return Json(content, JsonRequestBehavior.AllowGet);
+    }
   }
-}
   </code></pre>
   <p>All available extension methods</p>
   <pre><code>
-GetRenderedView(viewName, model);
-GetRenderedView(viewName, masterPageName, model);
-GetRenderedPartialView(partialViewName, model);
+  GetRenderedView(viewName, model);
+  GetRenderedView(viewName, masterPageName, model);
+  GetRenderedPartialView(partialViewName, model);
   </code></pre>
 </div>
 
@@ -200,6 +200,6 @@ GetRenderedPartialView(partialViewName, model);
   </p>
   <p>Usage</p>
   <pre><code>
-@@Html.Inline("relative path to the static content file")
+  @@Html.Inline("relative path to the static content file")
   </code></pre>
 </div>
