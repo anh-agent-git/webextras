@@ -30,7 +30,7 @@ namespace WebExtras.Mvc.Bootstrap
     /// <summary>
     /// Regular navigation bar
     /// </summary>
-    [StringValue("navbar")]
+    [StringValue("navbar navbar-default")]
     Normal,
 
     /// <summary>
