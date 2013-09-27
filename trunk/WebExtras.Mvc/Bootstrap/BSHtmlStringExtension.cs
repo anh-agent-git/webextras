@@ -22,6 +22,7 @@ using System.Linq;
 using System.Web.Routing;
 using WebExtras.Core;
 using WebExtras.Mvc.Html;
+using WebExtras.Mvc.Misc;
 
 namespace WebExtras.Mvc.Bootstrap
 {

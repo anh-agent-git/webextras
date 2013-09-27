@@ -29,7 +29,7 @@ namespace WebExtras.Mvc.Bootstrap
   [Serializable]
   public enum EBootstrapButton
   {
-    [StringValue("btn")]
+    [StringValue("btn btn-default")]
     Default,
 
     [StringValue("btn btn-primary")]
@@ -47,10 +47,16 @@ namespace WebExtras.Mvc.Bootstrap
     [StringValue("btn btn-inverse")]
     Inverse,
 
+    [StringValue("btn btn-danger")]
+    Danger,
+
     [StringValue("btn-large")]
     Large,
 
     [StringValue("btn-mini")]
-    Mini
+    Mini,
+    
+    [StringValue("btn-small")]
+    Small
   }
 }
