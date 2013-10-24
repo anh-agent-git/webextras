@@ -39,10 +39,5 @@ namespace WebExtras.JQDataTables
     /// string should match sInfo
     /// </summary>
     public string sInfoEmpty;
-
-    /// <summary>
-    /// Default constructor
-    /// </summary>
-    public OLanguage() { }
   }
 }
