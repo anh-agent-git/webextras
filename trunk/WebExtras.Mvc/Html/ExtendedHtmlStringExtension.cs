@@ -32,7 +32,7 @@ namespace WebExtras.Mvc.Html
     /// <returns>Current HTML element with classes added</returns>
     public static T AddCssClass<T>(this T html, string css) where T : IExtendedHtmlString
     {
-      html.CSSClasses.Add(css);
+      html.CSSClasses.AddRange(css.Split(' '));
 
       return html;
     }
