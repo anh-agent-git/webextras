@@ -32,7 +32,7 @@ namespace WebExtras.Mvc.Html
     /// <param name="innerHtml">List item text</param>
     /// <param name="htmlAttributes">[Optional] Extra HTML attributes</param>
     public HtmlListItem(string innerHtml, object htmlAttributes = null)
-      : base(EHtmlTag.ListItem, htmlAttributes)
+      : base(EHtmlTag.Li, htmlAttributes)
     {
       InnerHtml = innerHtml;
     }
