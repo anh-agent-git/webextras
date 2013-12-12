@@ -18,7 +18,9 @@
 
 #pragma warning disable 1591
 
+using System;
 using WebExtras.Core;
+using WebExtras.Mvc.Core;
 
 namespace WebExtras.Mvc.Bootstrap
 {
@@ -30,7 +32,7 @@ namespace WebExtras.Mvc.Bootstrap
     [StringValue("")]
     Normal,
 
-    [StringValue("large")]
+    [StringValue(typeof(FontAwesomeLargeIconStringValue))]
     Large,
 
     [StringValue("2x")]
