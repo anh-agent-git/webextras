@@ -18,10 +18,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using Newtonsoft.Json;
-using WebExtras.Core;
 
 namespace WebExtras.JQPlot
 {
@@ -29,25 +25,11 @@ namespace WebExtras.JQPlot
   /// jqPlot chart
   /// </summary>
   [Serializable]
-  public class JQPlotChart
+  public class JQPlotChart : JQPlotChartBase
   {
     /// <summary>
     /// Chart data
     /// </summary>
-    public double[][] chartData { get; set; }
-
-    /// <summary>
-    /// Chart options
-    /// </summary>
-    public JQPlotOptions chartOptions { get; set; }
-
-    /// <summary>
-    /// Converts the flot chart to a JSON serialized object
-    /// </summary>
-    /// <returns>JSON serialized object</returns>
-    public override string ToString()
-    {
-      return JsonConvert.SerializeObject(this, WebExtrasConstants.JsonSerializerSettings);
-    }
+    public new List<double[][]> chartData { get; set; }
   }
 }
