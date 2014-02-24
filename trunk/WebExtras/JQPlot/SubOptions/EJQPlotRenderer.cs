@@ -18,6 +18,7 @@
 
 using Newtonsoft.Json;
 using System;
+using System.Linq;
 using WebExtras.Core;
 
 #pragma warning disable 1591
@@ -30,24 +31,30 @@ namespace WebExtras.JQPlot.SubOptions
   [Serializable]
   public enum EJQPlotRenderer
   {
+    /// <summary>
+    /// Requires: jqplot.canvasTextRenderer.min.js, jqplot.canvasAxisLabelRenderer.min.js plugins
+    /// </summary>
     [StringValue("$.jqplot.CanvasAxisLabelRenderer")]
     CanvasAxisLabelRenderer,
 
-    AxisTickRenderer,
-    CanvasGridRenderer,
-    DivTitleRenderer,
-    LinearAxisRenderer,
-    MarkerRenderer,
-    ShapeRenderer,
-    ShadowRenderer,
-    LineRenderer
+    /// <summary>
+    /// Requires: jqplot.canvasTextRenderer.min.js, jqplot.canvasAxisTickRenderer.min.js plugins
+    /// </summary>
+    [StringValue("$.jqplot.CanvasAxisTickRenderer")]
+    CanvasAxisTickRenderer,
+
+    /// <summary>
+    /// Requires: jqplot.categoryAxisRenderer.min.js
+    /// </summary>
+    [StringValue("$.jqplot.CategoryAxisRenderer")]
+    CategoryAxisRenderer,
   }
 
   /// <summary>
-  /// ERenderer enum's custom Json Converter
+  /// EJQPlotRenderer enum's custom Json Converter
   /// </summary>
   [Serializable]
-  public class ERendererJsonConverter : JsonConverter
+  public class EJQPlotRendererJsonConverter : JsonConverter
   {
     /// <summary>
     /// Determines whether this instance can convert the specified object type
@@ -69,7 +76,7 @@ namespace WebExtras.JQPlot.SubOptions
     /// <returns>The object value</returns>
     public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
     {
-      throw new NotImplementedException();
+      return existingValue == null ? null : Enum.Parse(typeof(EJQPlotRenderer), existingValue.ToString().Split('.').Last());
     }
 
     /// <summary>
