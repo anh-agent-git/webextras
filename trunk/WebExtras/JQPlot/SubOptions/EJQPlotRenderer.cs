@@ -48,6 +48,12 @@ namespace WebExtras.JQPlot.SubOptions
     /// </summary>
     [StringValue("$.jqplot.CategoryAxisRenderer")]
     CategoryAxisRenderer,
+
+    /// <summary>
+    /// Requires: jqplot.DateAxisRenderer.min.js
+    /// </summary>
+    [StringValue("$.jqplot.DateAxisRenderer")]
+    DateAxisRenderer
   }
 
   /// <summary>
