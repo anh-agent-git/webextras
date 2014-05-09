@@ -33,7 +33,7 @@ namespace WebExtras.Mvc.Html
     public static T AddCssClass<T>(this T html, string css) where T : IExtendedHtmlString
     {
       if (!string.IsNullOrWhiteSpace(css))
-        html.CSSClasses.AddRange(css.Split(' '));
+        html.CSSClasses.AddRange(css.Trim().Split(' '));
 
       return html;
     }

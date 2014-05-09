@@ -21,11 +21,37 @@ using System;
 namespace WebExtras.Mvc.Core
 {
   /// <summary>
-  /// No CSS framework selected exception thrown when neither Bootstrap nor Gumby 
-  /// CSS framework is selected
+  /// No CSS framework theme selected exception thrown when neither Bootstrap nor Gumby 
+  /// CSS framework is selected and an extension for these framework is used
   /// </summary>
   public class NoCssThemeException : Exception
   {
+    /// <summary>
+    /// The code line that can resolve this exception
+    /// </summary>
+    readonly string m_codeLine;
+
+    /// <summary>
+    /// Constructor
+    /// </summary>
+    public NoCssThemeException()
+    {
+      switch (WebExtrasMvcConstants.CssFramework)
+      {
+        case ECssFramework.None:
+          throw new NoCssFrameworkException();
+        case ECssFramework.Gumby:
+          m_codeLine = "          WebExtrasMvcConstants.GumbyTheme = EGumbyTheme.Metro;\n";
+          break;
+        case ECssFramework.Bootstrap:
+          m_codeLine = "          WebExtrasMvcConstants.BootstrapVersion = EBootstrapVersion.V2;\n";
+          break;
+        default:
+          m_codeLine = string.Empty;
+          break;
+      }
+    }
+
     /// <summary>
     /// The error message that explains the reason for the exception
     /// </summary>
@@ -33,19 +59,17 @@ namespace WebExtras.Mvc.Core
     {
       get
       {
-        const string msg = "Please select either Bootstrap or Gumby CSS Theme framework.\n" +
+        const string prefix = "Please select the appropriate CSS framework theme/version.\n" +
                            "The simplest way of doing this is to set the value in your Global.asax.cs as shown below:\n\n" +
                            "  public class MvcApplication : System.Web.HttpApplication\n" +
                            "  {\n" +
                            "      protected void Application_Start()\n" +
-                           "      {\n" +
-                           "          WebExtrasMvcConstants.GumbyTheme = EGumbyTheme.Metro;\n" +
-                           "                                    OR\n" +
-                           "          WebExtrasMvcConstants.BootstrapVersion = EBootstrapVersion.V2;\n" +
-                           "      }\n" +
+                           "      {\n";
+
+        const string suffix = "      }\n" +
                            "  }\n";
 
-        return msg;
+        return prefix + m_codeLine + suffix;
       }
     }
   }
