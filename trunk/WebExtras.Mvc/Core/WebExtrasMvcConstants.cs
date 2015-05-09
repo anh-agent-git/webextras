@@ -14,6 +14,7 @@
 // 
 // You should have received a copy of the GNU Lesser General Public License
 // along with this program.  If not, see <http://www.gnu.org/licenses/>.
+//
 
 using System;
 using WebExtras.Mvc.Html;
@@ -62,10 +63,5 @@ namespace WebExtras.Mvc.Core
     ///   The default tag to use when encapsulating text in an HTML tag
     /// </summary>
     public static EHtmlTag DefaultTagForTextEncapsulation = EHtmlTag.Div;
-
-    /// <summary>
-    /// Default datetime picker options for bootstrap
-    /// </summary>
-    public static Bootstrap.DateTimePicker.PickerOptions BootstrapDateTimePickerOptions = new Bootstrap.DateTimePicker.PickerOptions();
   }
 }
